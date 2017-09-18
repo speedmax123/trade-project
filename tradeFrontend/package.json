@@ -1,0 +1,14 @@
+{
+  "name": "y",
+  "version": "0.0.1",
+  "description": "trade system front end",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./index.js>index.log"
+  },
+  "author": "Speed",
+  "license": "MIT",
+  "dependencies": {
+    "request": "^2.81.0"
+  }
+}
