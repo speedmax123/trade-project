@@ -14,6 +14,19 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import java.sql.Connection;
 import java.util.concurrent.ThreadPoolExecutor;
 
+/**
+ //        dataSource.cachePrepStmts=true
+ //        dataSource.prepStmtCacheSize=250
+ //        dataSource.prepStmtCacheSqlLimit=2048
+ //        dataSource.useServerPrepStmts=true
+ //        dataSource.useLocalSessionState=true
+ //        dataSource.useLocalTransactionState=true
+ //        dataSource.rewriteBatchedStatements=true
+ //        dataSource.cacheResultSetMetadata=true
+ //        dataSource.cacheServerConfiguration=true
+ //        dataSource.elideSetAutoCommits=true
+ //        dataSource.maintainTimeStats=false
+ */
 @ComponentScan(basePackages = "com.speedmax.trade")
 @Configuration
 @EnableJpaRepositories("com.speedmax.trade.dao")
@@ -29,6 +42,15 @@ public class DaoConfig {
         cfg.addDataSourceProperty("cachePrepStmts", "true");
         cfg.addDataSourceProperty("prepStmtCacheSize", "250");
         cfg.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
+        cfg.addDataSourceProperty("useServerPrepStmts", "true");
+        cfg.addDataSourceProperty("useLocalSessionState", "true");
+        cfg.addDataSourceProperty("useLocalTransactionState", "true");
+        cfg.addDataSourceProperty("rewriteBatchedStatements", "true");
+        cfg.addDataSourceProperty("cacheResultSetMetadata", "true");
+        cfg.addDataSourceProperty("cacheServerConfiguration", "true");
+        cfg.addDataSourceProperty("elideSetAutoCommits", "true");
+        cfg.addDataSourceProperty("maintainTimeStats", "false");
+
         cfg.setAutoCommit(false);
         return new HikariDataSource(cfg);
     }

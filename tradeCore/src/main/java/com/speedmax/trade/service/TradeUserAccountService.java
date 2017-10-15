@@ -11,4 +11,5 @@ public interface TradeUserAccountService {
     void save(TradeUserAccountWithoutVersion tradeUser);
     TradeUserAccount concurrentTest();
     TradeUserAccountWithoutVersion concurrentTestWithoutVersion();
+    TradeUserAccount simpleConcurrentTest();
 }

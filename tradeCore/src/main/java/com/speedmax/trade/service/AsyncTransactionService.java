@@ -5,7 +5,7 @@ import org.springframework.retry.annotation.Retryable;
 
 public interface AsyncTransactionService {
 
-    @Retryable(maxAttempts = 30, value = { ObjectOptimisticLockingFailureException.class })
+    @Retryable(maxAttempts = 3, value = { ObjectOptimisticLockingFailureException.class })
     void simpleTransaction();
 
     void simpleTransactionWithoutVersion();

@@ -104,6 +104,12 @@ public class TradeUserAccountServiceImpl implements TradeUserAccountService {
         return this.findOneById(1L);
     }
 
+    @Override
+    public TradeUserAccount simpleConcurrentTest() {
+        asyncTransactionService.simpleTransaction();
+        return null;
+    }
+
     private class SimpleAddTransaction implements Callable<Void> {
         @Override
         public Void call() {
